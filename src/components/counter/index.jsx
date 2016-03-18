@@ -3,6 +3,7 @@ import Reactor from 'reactor';
 
 import Counter from 'modules/counter';
 import Input from './input';
+import List from './list';
 import Total from './total';
 
 export default React.createClass({
@@ -18,6 +19,7 @@ export default React.createClass({
           Counter
         </div>
         <Input />
+        <List />
         <Total />
       </div>
     );

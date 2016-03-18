@@ -14,7 +14,7 @@ export default Store({
 function updateCounters(state, { counters = [] }) {
   return state.withMutations(mutation => {
     counters.forEach(({ id, title, count }) => {
-      mutation.set(id, I({ title, count }));
+      mutation.set(id, I({ id, title, count }));
     });
   });
 }

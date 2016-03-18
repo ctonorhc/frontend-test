@@ -7,9 +7,10 @@ const post = (url, body) => request({ type: 'post', url, body });
 
 const remove = (url, body) => request({ type: 'delete', url, body });
 
-function request({ type, url, body }) {
+function request({ type, url, body = {} }) {
   return new Bluebird((resolve, reject) => {
     superagent[type](url)
+      .send(body)
       .end((err, res) => {
         if (err) {
           return reject(err);
