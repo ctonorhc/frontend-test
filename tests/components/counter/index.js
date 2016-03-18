@@ -1,5 +1,13 @@
-describe('The first test', () => {
-  it('should pass', () => {
-    (1).should.equal(1);
+describe('Counter', () => {
+  it('should render an Input Component', () => {
+
+  });
+
+  it('should render a List of Counters', () => {
+
+  });
+
+  it('should render a Total', () => {
+
   });
 });
