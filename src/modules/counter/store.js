@@ -1,5 +1,5 @@
 import { Store, toImmutable as I } from 'nuclear-js'
-import { LOAD_COUNTERS, CREATE_COUNTER } from './actionTypes'
+import actionTypes from './actionTypes'
 
 export default Store({
   getInitialState() {
@@ -9,8 +9,8 @@ export default Store({
   },
 
   initialize() {
-    this.on(LOAD_COUNTERS, loadCounters)
-    this.on(CREATE_COUNTER, createCounter)
+    this.on(actionTypes.LOAD_COUNTERS, loadCounters)
+    this.on(actionTypes.CREATE_COUNTER, createCounter)
   }
 })
 

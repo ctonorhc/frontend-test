@@ -13,6 +13,11 @@ export default React.createClass({
     };
   },
 
+  componentWillMount() {
+    Counter.actions.loadCounters();
+    // Counter.actions.createCounter();
+  },
+
   render() {
     return (
       <div>

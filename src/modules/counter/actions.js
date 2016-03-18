@@ -1,30 +1,27 @@
 import Reactor from 'reactor';
-import {
-    LOAD_COUNTERS,
-    CREATE_COUNTER,
-    INCREMENT_COUNTER,
-    DECREMENT_COUNTER,
-    REMOVE_COUNTER,
-} from './actionTypes';
+import Fetcher from 'fetcher';
+import actionTypes from './actionTypes';
 
 export default {
   loadCounters() {
-    Reactor.dispatch(LOAD_COUNTERS, { products })
+    return Fetcher.get('/api/v1/counters/')
+      .then(res => Reactor.dispatch(actionTypes.LOAD_COUNTERS, { counters: res.body }));
   },
 
-  createCounter() {
-    Reactor.dispatch(CREATE_COUNTER, { counter });
+  createCounter(title) {
+    return Fetcher.post('/api/v1/counter/', { title })
+      .then(res => Reactor.dispatch(actionTypes.CREATE_COUNTER, { counter: res.body }));
   },
 
   incrementCounter() {
-    Reactor.dispatch(INCREMENT_COUNTER, { counter });
+    Reactor.dispatch(actionTypes.INCREMENT_COUNTER, { counter });
   },
 
   decrementCounter() {
-    Reactor.dispatch(DECREMENT_COUNTER, { counter });
+    Reactor.dispatch(actionTypes.DECREMENT_COUNTER, { counter });
   },
 
   removeCounter() {
-    Reactor.dispatch(REMOVE_COUNTER, { counter });
+    Reactor.dispatch(actionTypes.REMOVE_COUNTER, { counter });
   }
 };
