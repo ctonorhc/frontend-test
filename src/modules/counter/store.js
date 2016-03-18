@@ -3,21 +3,18 @@ import actionTypes from './actionTypes'
 
 export default Store({
   getInitialState() {
-    return I({
-      1: 'some counter'
-    })
+    return I({})
   },
 
   initialize() {
-    this.on(actionTypes.LOAD_COUNTERS, loadCounters)
-    this.on(actionTypes.CREATE_COUNTER, createCounter)
+    this.on(actionTypes.UPDATE_COUNTERS, updateCounters)
   }
 })
 
-function loadCounters(state, { products }) {
-  return state;
-}
-
-function createCounter(state, { product }) {
-  return state;
+function updateCounters(state, { counters = [] }) {
+  return state.withMutations(mutation => {
+    counters.forEach(({ id, title, count }) => {
+      mutation.set(id, I({ title, count }));
+    });
+  });
 }

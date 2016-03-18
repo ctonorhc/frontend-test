@@ -5,12 +5,12 @@ import actionTypes from './actionTypes';
 export default {
   loadCounters() {
     return Fetcher.get('/api/v1/counters/')
-      .then(res => Reactor.dispatch(actionTypes.LOAD_COUNTERS, { counters: res.body }));
+      .then(res => Reactor.dispatch(actionTypes.UPDATE_COUNTERS, { counters: res.body }));
   },
 
   createCounter(title) {
     return Fetcher.post('/api/v1/counter/', { title })
-      .then(res => Reactor.dispatch(actionTypes.CREATE_COUNTER, { counter: res.body }));
+      .then(res => Reactor.dispatch(actionTypes.UPDATE_COUNTERS, { counters: res.body }));
   },
 
   incrementCounter() {
