@@ -1,3 +1,6 @@
+import { render } from 'react-dom';
 import React from 'react';
 
-React.render(<div>hello world</div>, document.getElementById('app'));
+import Counter from 'components/counter';
+
+render(<Counter />, document.getElementById('app'));

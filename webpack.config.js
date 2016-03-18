@@ -1,3 +1,5 @@
+var path = require('path');
+
 module.exports = {
   entry: './src/entry.js',
   output: {
@@ -17,6 +19,9 @@ module.exports = {
     ]
   },
   resolve: {
-    extensions: ['', '.js', '.jsx']
+    extensions: ['', '.js', '.jsx'],
+    root: [
+      path.resolve('./src')
+    ]
   }
 };
