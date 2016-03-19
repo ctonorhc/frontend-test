@@ -28,7 +28,13 @@ export default {
     outline: 'none'
   },
   inputIcon: {
-    fill: colors.darkPurple,
-    marginLeft: 20
+    fill: colors.darkPurple
+  },
+  buttonReset: {
+    marginLeft: 20,
+    background: 'none',
+    border: 'none',
+    padding: 0,
+    outline: 'none'
   }
 };

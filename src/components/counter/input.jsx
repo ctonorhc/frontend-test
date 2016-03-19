@@ -27,6 +27,7 @@ export default React.createClass({
     return (
       <form style={ styles.form }
             onSubmit={ this.createCounter }>
+
         <input value={ value }
                style={ styles.input }
                onChange={ e => this.setState({ value: e.target.value }) }
@@ -34,8 +35,10 @@ export default React.createClass({
                required
                ref={ node => this.input = node }/>
 
-        <LibraryAdd style={ styles.inputIcon }
-                    onClick={ this.createCounter }/>
+        <button style={ styles.buttonReset}
+                type='submit'>
+          <LibraryAdd style={ styles.inputIcon }/>
+        </button>
       </form>
     );
   }
