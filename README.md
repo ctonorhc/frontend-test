@@ -41,11 +41,19 @@ A possible layout could be:
 
 ## Install and start the server
 
+This has been tested with Node v5.9.0
+
 ```
 $ npm install
+$ npm run build
 $ npm start
-$ npm run build #[optional] use for any precompilers you choose
 ```
+
+To run tests
+```
+$ npm run test
+```
+
 
 ## API endpoints / examples
 
