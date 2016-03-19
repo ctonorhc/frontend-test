@@ -18,10 +18,10 @@ export default React.createClass({
   render() {
     return (
       <div style={ styles.total }>
-        <span>
+        <span className='label'>
           Total
         </span>
-        <span style={ styles.totalValue }>
+        <span className='total-amount' style={ styles.totalValue }>
           { this.state.total}
         </span>
       </div>

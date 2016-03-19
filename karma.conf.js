@@ -1,9 +1,11 @@
+var path = require('path');
+
 module.exports = function (config) {
   config.set({
       // ... normal karma configuration
       browsers: [ 'Chrome' ],
 
-      frameworks: ['mocha-debug', 'mocha', 'chai'],
+      frameworks: ['mocha-debug', 'mocha', 'chai', 'sinon'],
 
       files: [
           'src/**/tests/*.js',
@@ -17,12 +19,25 @@ module.exports = function (config) {
 
       reporters: [ 'progress' ],
 
-      webpack: {
-          // karma watches the test entry points
-          // (you don't need to specify the entry option)
-          // webpack watches dependencies
-
-          // webpack configuration
+      webpack: { //kind of a copy of your webpack config
+        module: {
+          loaders: [
+            {
+              test: /\.jsx?$/,
+              exclude: /node_modules/,
+              loader: 'babel-loader',
+              query: {
+                presets: ['es2015', 'react']
+              }
+            }
+          ]
+        },
+        resolve: {
+          extensions: ['', '.js', '.jsx'],
+          root: [
+            path.resolve('./src')
+          ]
+        }
       },
 
       webpackMiddleware: {
