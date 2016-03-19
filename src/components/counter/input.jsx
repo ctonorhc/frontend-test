@@ -2,10 +2,9 @@ import React from 'react';
 import Reactor from 'reactor';
 
 import CounterModule from 'modules/counter';
-import Input from './input';
-import Total from './total';
-import { TextField, FlatButton } from 'material-ui';
 import LibraryAdd from 'material-ui/lib/svg-icons/av/library-add';
+
+import styles from './styles';
 
 export default React.createClass({
 
@@ -15,25 +14,29 @@ export default React.createClass({
     };
   },
 
-  createCounter() {
-    CounterModule.actions.createCounter(this.state.value);
+  createCounter(e) {
+    e.preventDefault();
+
+    if (this.input.checkValidity()) {
+      CounterModule.actions.createCounter(this.state.value);
+    }
   },
 
   render() {
     const { value } = this.state;
     return (
-      <div>
+      <form style={ styles.form }
+            onSubmit={ this.createCounter }>
+        <input value={ value }
+               style={ styles.input }
+               onChange={ e => this.setState({ value: e.target.value }) }
+               placeholder='Enter a name'
+               required
+               ref={ node => this.input = node }/>
 
-        <TextField value={ value }
-                   name='create-counter'
-                   hintText='Enter a name'
-                   onChange={ e => this.setState({ value: e.target.value }) } />
-        <FlatButton onClick={ this.createCounter }
-                    primary={ true }
-                    label='Create Counter'
-                    labelPosition='before'
-                    icon={ <LibraryAdd/> }/>
-      </div>
+        <LibraryAdd style={ styles.inputIcon }
+                    onClick={ this.createCounter }/>
+      </form>
     );
   }
 });

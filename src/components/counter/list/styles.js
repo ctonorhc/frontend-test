@@ -1,11 +1,13 @@
+import colors from 'colors';
+
 export default {
   entry: {
     display: 'flex',
     alignItems: 'center',
     flex: '0 0 auto',
-    color: '#4A5485',
+    color: colors.darkPurple,
     padding: 15,
-    border: `1px solid #4A5485`,
+    border: `1px solid ${colors.darkPurple}`,
     borderRadius: 5,
     marginBottom: 5
   },
@@ -22,23 +24,23 @@ export default {
 
   count: {
     fontSize: 12,
-    fontColor: '#94A0E2'
+    fontColor: colors.lightPurple
   },
 
   clear: {
-    fill: '#B2BCF4'
+    fill: colors.lightPurple
   },
 
   add: {
-    border: `1px solid #6CC7A7`,
+    border: `1px solid ${colors.green}`,
     borderRadius: 5,
-    fill: '#6CC7A7'
+    fill: colors.green
   },
 
   remove: {
-    border: `1px solid #FFB18B`,
+    border: `1px solid ${colors.red}`,
     borderRadius: 5,
-    fill: '#FFB18B',
+    fill: colors.red,
     marginRight: 15
   }
 };

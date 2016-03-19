@@ -6,6 +6,8 @@ import Input from './input';
 import List from './list';
 import Total from './total';
 
+import styles from './styles';
+
 export default React.createClass({
 
   componentWillMount() {
@@ -14,10 +16,7 @@ export default React.createClass({
 
   render() {
     return (
-      <div>
-        <div>
-          Counter
-        </div>
+      <div style={ styles.counter }>
         <Input />
         <List />
         <Total />

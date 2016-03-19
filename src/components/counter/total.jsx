@@ -2,8 +2,9 @@ import React from 'react';
 import Reactor from 'reactor';
 
 import CounterModule from 'modules/counter';
-import Input from './input';
 import Total from './total';
+
+import styles from './styles';
 
 export default React.createClass({
   mixins: [Reactor.ReactMixin],
@@ -16,8 +17,13 @@ export default React.createClass({
 
   render() {
     return (
-      <div>
-        Total - { this.state.total}
+      <div style={ styles.total }>
+        <span>
+          Total
+        </span>
+        <span style={ styles.totalValue }>
+          { this.state.total}
+        </span>
       </div>
     );
   }

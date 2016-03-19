@@ -23,7 +23,7 @@ export default React.createClass({
             { counter.get('title') }
           </div>
           <div style={ styles.count }>
-            { counter.get('count') }
+            { `Count: ${counter.get('count')}` }
           </div>
         </div>
         <div style={ styles.modifiers }>
