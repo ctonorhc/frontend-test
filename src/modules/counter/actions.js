@@ -24,7 +24,7 @@ export default {
   },
 
   removeCounter(id) {
-    return Fetcher.delete('/api/v1/counter/', { id })
+    return Fetcher.remove('/api/v1/counter/', { id })
       .then(updateCounter);
   }
 };

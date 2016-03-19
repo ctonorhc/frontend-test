@@ -21,4 +21,4 @@ function request({ type, url, body = {} }) {
   });
 }
 
-export default { get, post };
+export default { get, post, remove };
