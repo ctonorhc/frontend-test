@@ -5,6 +5,7 @@ import Counter from 'modules/counter';
 import Input from './input';
 import List from './list';
 import Total from './total';
+import ErrorNotifier from './error-notifier';
 
 import styles from './styles';
 
@@ -17,6 +18,7 @@ export default React.createClass({
   render() {
     return (
       <div style={ styles.counter }>
+        <ErrorNotifier />
         <Input />
         <List />
         <Total />

@@ -1,13 +1,13 @@
-import colors from 'colors';
+import { COLOR } from 'enums';
 
 export default {
   total: {
     fontSize: 20,
-    color: colors.darkPurple,
+    color: COLOR.PURPLE,
     marginTop: 20
   },
   totalValue: {
-    border: `1px solid ${colors.darkPurple}`,
+    border: `1px solid ${COLOR.PURPLE}`,
     borderRadius: 5,
     marginLeft: 20,
     padding: 10,
@@ -20,15 +20,15 @@ export default {
     flex: '0 0 auto'
   },
   input: {
-    color: colors.darkPurple,
-    border: `1px solid ${colors.darkPurple}`,
+    color: COLOR.PURPLE,
+    border: `1px solid ${COLOR.PURPLE}`,
     borderRadius: 5,
     fontSize: 18,
     padding: 10,
     outline: 'none'
   },
   inputIcon: {
-    fill: colors.darkPurple
+    fill: COLOR.PURPLE
   },
   buttonReset: {
     marginLeft: 20,

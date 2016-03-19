@@ -1,13 +1,13 @@
-import colors from 'colors';
+import { COLOR } from 'enums';
 
 export default {
   entry: {
     display: 'flex',
     alignItems: 'center',
     flex: '0 0 auto',
-    color: colors.darkPurple,
+    color: COLOR.PURPLE,
     padding: 15,
-    border: `1px solid ${colors.darkPurple}`,
+    border: `1px solid ${COLOR.PURPLE}`,
     borderRadius: 5,
     marginBottom: 5
   },
@@ -24,23 +24,23 @@ export default {
 
   count: {
     fontSize: 12,
-    fontColor: colors.lightPurple
+    fontColor: COLOR.LIGHT_PURPLE
   },
 
   clear: {
-    fill: colors.lightPurple
+    fill: COLOR.LIGHT_PURPLE
   },
 
   add: {
-    border: `1px solid ${colors.green}`,
+    border: `1px solid ${COLOR.GREEN}`,
     borderRadius: 5,
-    fill: colors.green
+    fill: COLOR.GREEN
   },
 
   remove: {
-    border: `1px solid ${colors.red}`,
+    border: `1px solid ${COLOR.RED}`,
     borderRadius: 5,
-    fill: colors.red,
+    fill: COLOR.RED,
     marginRight: 15
   }
 };

@@ -4,7 +4,7 @@ import actions from './actions';
 import getters from './getters';
 
 Reactor.registerStores({
-  'counters': CounterStore
+  'counterStore': CounterStore
 });
 
 export default {
