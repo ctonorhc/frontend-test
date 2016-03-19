@@ -3,9 +3,9 @@ import Reactor from 'reactor';
 
 import CounterModule from 'modules/counter';
 
-import Clear from 'material-ui/lib/svg-icons/content/Clear';
-import Add from 'material-ui/lib/svg-icons/content/Add';
-import Remove from 'material-ui/lib/svg-icons/content/Remove';
+import Clear from 'material-ui/lib/svg-icons/content/clear';
+import Add from 'material-ui/lib/svg-icons/content/add';
+import Remove from 'material-ui/lib/svg-icons/content/remove';
 
 import styles from './styles';
 
