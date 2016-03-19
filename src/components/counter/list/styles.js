@@ -6,7 +6,8 @@ export default {
     color: '#4A5485',
     padding: 15,
     border: `1px solid #4A5485`,
-    borderRadius: 5
+    borderRadius: 5,
+    marginBottom: 5
   },
 
   label: {

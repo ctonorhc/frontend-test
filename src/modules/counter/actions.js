@@ -5,30 +5,30 @@ import actionTypes from './actionTypes';
 export default {
   loadCounters() {
     return Fetcher.get('/api/v1/counters/')
-      .then(updateCounter);
+      .then(loadCounters);
   },
 
   createCounter(title) {
     return Fetcher.post('/api/v1/counter/', { title })
-      .then(updateCounter);
+      .then(loadCounters);
   },
 
   incrementCounter(id) {
     return Fetcher.post('/api/v1/counter/inc', { id })
-      .then(updateCounter);
+      .then(loadCounters);
   },
 
   decrementCounter(id) {
     return Fetcher.post('/api/v1/counter/dec', { id })
-      .then(updateCounter);
+      .then(loadCounters);
   },
 
   removeCounter(id) {
     return Fetcher.remove('/api/v1/counter/', { id })
-      .then(updateCounter);
+      .then(loadCounters);
   }
 };
 
-function updateCounter(res) {
-  return Reactor.dispatch(actionTypes.UPDATE_COUNTERS, { counters: res.body });
+function loadCounters(res) {
+  return Reactor.dispatch(actionTypes.LOAD_COUNTERS, { counters: res.body });
 }

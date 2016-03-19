@@ -7,14 +7,10 @@ export default Store({
   },
 
   initialize() {
-    this.on(actionTypes.UPDATE_COUNTERS, updateCounters)
+    this.on(actionTypes.LOAD_COUNTERS, loadCounters)
   }
 })
 
-function updateCounters(state, { counters = [] }) {
-  return state.withMutations(mutation => {
-    counters.forEach(({ id, title, count }) => {
-      mutation.set(id, I({ id, title, count }));
-    });
-  });
+function loadCounters(state, { counters = [] }) {
+  return counters.reduce((map, { id, title, count }) => map.set(id, I({ id, title, count })), I({}));
 }
