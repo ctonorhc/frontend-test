@@ -6,16 +6,16 @@ module.exports = function (config) {
       frameworks: ['mocha-debug', 'mocha', 'chai'],
 
       files: [
-          'tests/**/*.js',
+          'src/**/tests/*.js',
           // each file acts as entry point for the webpack configuration
       ],
 
       preprocessors: {
           // add webpack as preprocessor
-          'tests/**/*.js': ['webpack']
+          'src/**/tests/*.js': ['webpack']
       },
 
-      reporters: [ 'progress', 'html' ],
+      reporters: [ 'progress' ],
 
       webpack: {
           // karma watches the test entry points
